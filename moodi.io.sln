@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moodi.io", "moodi.io\moodi.io.csproj", "{42E627D0-D073-433B-9FB7-DFFA35E715D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42E627D0-D073-433B-9FB7-DFFA35E715D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42E627D0-D073-433B-9FB7-DFFA35E715D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42E627D0-D073-433B-9FB7-DFFA35E715D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42E627D0-D073-433B-9FB7-DFFA35E715D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FFC78B4-71B8-48D3-8884-D495C4D0AA71}
+	EndGlobalSection
+EndGlobal

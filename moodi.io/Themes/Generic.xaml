@@ -1,0 +1,74 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="clr-namespace:moodi.io.Components"
+    xmlns:converters="clr-namespace:moodi.io.Converters">
+
+
+
+    <Style TargetType="{x:Type components:LoadingSpinner}">
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type components:LoadingSpinner}">
+                    
+                    <Viewbox Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        
+                        <Canvas VerticalAlignment="Stretch" Height="24" Width="24" HorizontalAlignment="Stretch" RenderTransformOrigin="0.5,0.5">
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform x:Name="Rotation" Angle="0"/>
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+
+                            <Path Fill="{Binding RelativeSource={RelativeSource AncestorType={x:Type components:LoadingSpinner}}, Path=Foreground }" 
+                                  Data="M18.364 5.636L16.95 7.05A7 7 0 1 0 19 12h2a9 9 0 1 1-2.636-6.364z" 
+                                  UseLayoutRounding="False" 
+                                  StrokeStartLineCap="Triangle" 
+                                  StrokeEndLineCap="Flat" />
+                        </Canvas>
+
+
+                        <Viewbox.Triggers>
+                            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                <BeginStoryboard >
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Rotation" Storyboard.TargetProperty="Angle">
+                                            <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="180"/>
+                                            <EasingDoubleKeyFrame KeyTime="00:00:01" Value="359"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Viewbox.Triggers>
+                    </Viewbox>
+
+                    
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type components:Icon}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type components:Icon}">
+                    <ControlTemplate.Resources>
+                        <converters:StringToResourceConverter x:Key="StringToResourceConverter"></converters:StringToResourceConverter>
+                    </ControlTemplate.Resources>
+
+                    <Viewbox Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <Path Fill="{TemplateBinding Foreground}" 
+                              Data="{TemplateBinding Kind, Converter={StaticResource StringToResourceConverter}}" />
+                    </Viewbox>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    
+</ResourceDictionary>
