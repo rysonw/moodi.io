@@ -12,6 +12,8 @@
 
 ### Overview and Purpose:
 
+MSSA Project #2:
+
 This app is a WPF-based application that uses facial and mood detection to recommend entertainment based on your mood. Using the Emgu.CV module, we are able to use AI and build our own models to recognize faces present in the picture. This app can also take images and generate real-time mood detection info through the Google Cloud Vision API. The application displays the results and recommends music, books and movies based on your mood.
 <br>
 
